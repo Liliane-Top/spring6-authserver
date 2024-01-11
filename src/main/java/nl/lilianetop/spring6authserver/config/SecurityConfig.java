@@ -89,8 +89,8 @@ public class SecurityConfig {
   @Bean
   public RegisteredClientRepository registeredClientRepository() {
     RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
-        .clientId("oidc-client")
-        .clientSecret("{noop}secret")//usually you encrypt this secret and stored safe
+        .clientId("clientId")
+        .clientSecret("secret")//usually you encrypt this secret and store it safe
         .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
         .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
         .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
